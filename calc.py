@@ -1,20 +1,16 @@
-class Calculator:
-    def __init__(self):
-        pass
+def simple_calculator(string):
+    try:
+        return eval(string, {}, {})
+    except:
+        return 'ERR'
 
-    @staticmethod
-    def add(x1, x2):
-        return x1 + x2
 
-    @staticmethod
-    def multiply(x1, x2):
-        return x1 * x2
+def main():
+    equation = input()
+    while equation:
+        print(simple_calculator(equation))
+        equation = input()
 
-    @staticmethod
-    def subtract(x1, x2):
-        return x1 - x2
 
-    @staticmethod
-    def divide(x1, x2):
-        if x2 != 0:
-            return x1 / x2
+if __name__ == '__main__':
+    main()
